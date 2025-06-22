@@ -1,0 +1,15 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="header" id="home">
+  <div class="container">
+    <div class="text-box">
+      <img src="{{ url_for('static', filename='images/selfpic.jpg') }}" alt="Lynn Zhu">
+      <h1>Lin (Lynn) Zhu</h1>
+      <p>PhD student in Informatics at UIUC<br>Email: lzhu18@illinois.edu</p>
+      <a href="{{ url_for ('about') }}" class="hero-btn">Learn More</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
