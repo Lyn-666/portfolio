@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+     
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>This is Lynn's website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abril+Fatface&family=Lora:ital,wght@0,600;1,500;1,600&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <style> 
+        @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abril+Fatface&family=Lora:ital,wght@0,600;1,500;1,600&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap'); 
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="header" id="home">
+        <div class="container">
+        <nav>
+<!-- <div class="nav-logo"> <h1><i>Lynn</i></h1> </div>-->             
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul class="nav_list">
+                    <li><a href="#home" class="nav_link active">HOME</a></li>
+                    <li><a href="#course" class="nav_link">ABOUT</a></li>
+                    <li><a href="#Campus" class="nav_link">RESEARCH</a></li>
+                    <li><a href="#news" class="nav_link">NEWS</a></li>
+                    <li><a href="#publications" class="nav_link">PUBLICATIONS</a></li>
+                    <li><a href="#contact" class="nav_link">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <img src="{{ url_for ('static', filename = 'images/selfpic.jpg') }}">
+            <h1>Lin (Lynn) Zhu</h1>
+            <p> Phd student in Informatics at UIUC<br>
+                Email:lzhu18@illinois.edu
+            </p>
+            <a href="" class="hero-btn">Welcome</a>
+        </div>
+        </div>
+    </section>
+
+    <!-------Course-->
+    <section class="course" id="course">
+        <h1>About me </h1>
+        <p>Hello, I'm open and friendly. Please feel free to contact me if you have any questions 
+            about my works <br> or look forward to cooperating with me.</p>
+
+        <div class="row">
+            <div class="course-col" >
+                <h3>Interests</h3>
+                <ul>
+                    <li><a>Bioinformatics</a></li>
+                    <li><a>Machine Learning</a></li>
+                    <li><a>Out-of-Distribution Generation</a></li>
+                    <li><a>Large Language Model</a></li>
+                    <li><a>Neuroscience</a></li>
+                </ul>
+            </div>
+            <div class="course-col">
+                <h3>Degree</h3>
+                <ul>
+                    <li><a>Bs.c in Statistics at <br>Hainan Normal University</a></li>
+                    <li><a>Ms.c in Complex System and Data Analysis at <br> Shenzhen University</a></li>
+                    <li><a>Phd candidate in informatics at the University of Illinois Urbana-Champaign </a></li>
+                </ul>
+            </div>
+            <div class="course-col">
+                <h3>Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <span>Python</span>
+                        <div class="stars">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>R/SPSS</span>
+                        <div class="stars">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>HTML/CSS/JavaScript</span>
+                        <div class="stars">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>MATLAB</span>
+                        <div class="stars">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>C++</span>
+                        <div class="stars">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>MySQL</span>
+                        <div class="stars">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!------RESEARCH----->
+
+    <section class="campus" id="campus">
+        <h1>Recent Projects</h1>
+
+        <div class="campus-row">
+            <div class="campus-col">
+                <div class="image-box"> 
+                    <img src="{{ url_for('static', filename='images/anti3.png') }}">
+                    <div class="layer">
+                        <p> This project is using amino acid sequences to predict the anti-CRISPR proteins
+                            based on machine learning methods</p>
+                    </div>
+                </div>
+                <h3><b><a href="https://en.wikipedia.org/wiki/Anti-CRISPR" target="_blank">Anti-CRISPRs</a></b></h3>
+            </div>
+
+            <div class="campus-col">
+                <div class="image-box">
+                    <img src="{{ url_for('static', filename='images/factor3.png') }}">
+                    <div class="layer">
+                        <p>Exploring the roles of physicochemical and structural properties in predicting the activities of Trans-Acting Splicing Factors</p>
+                    </div>
+                </div>
+                <h3><b><a href="https://en.wikipedia.org/wiki/Trans-acting" target="_blank">Trans-Acting Splicing Factor</a></b></h3>
+            </div>
+
+            <div class="campus-col">
+                <div class="image-box">
+                    <img src="{{ url_for('static', filename='images/off2.gif') }}">
+                    <div class="layer">
+                        <p>Using deep learning methods to quantify CRISPR Off-Target activities with mismatches and indels</p>
+                    </div>
+                </div>
+                <h3><b><a href="https://en.wikipedia.org/wiki/Off-target_genome_editing" target="_blank">CRISPR Off-Target</a></b></h3>
+            </div>
+        </div>
+
+    </section>
+
+    <!-------Events time lines------->
+    <section  class="news" id="news">
+        <h1>Recent News</h1>
+        
+
+        <div class="time">
+            <ul class="timeline">
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Language test</span>
+                            <span class="time-wrapper"><span class="time">November 8, 2022 </span></span>
+                        </div>
+                        <div class="desc">I took IELTS test this day. my overall score is 6.5, 
+                            and speaking, writing and listening scores all are 6.0, reading score is 8.5. 
+                             </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="direction-1">
+                        <div class="flag-wrapper">
+                            <span class="flag">Publications</span>
+                            <span class="time-wrapper"><span class="time">October 25, 2022</span></span>
+			            </div>
+			           <div class="desc">My third works has been published on BMC informatics today.  Welcome to read this paper</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Cooperation</span>
+                            <span class="time-wrapper"><span class="time">August 11, 2022</span></span>
+                        </div>
+                        <div class="desc">Starting a new work about protein design. It's glad to work with Pro.Cai, and my main job involves 
+                            significant feature selection.</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+ 
+
+<!-----testimonials-->
+<section class="testimonials" id="publications">
+    <h1>Publications</h1>
+
+    <div class="row">
+        <div class="publication-col">
+            <ul>
+                <li><a><span>Zhu, L.</span>, Wang, X., Li, F. et al. PreAcrs: a machine learning framework for identifying anti-CRISPR proteins. BMC
+                    Bioinformatics 23, 444 (2022). <a href="https://doi.org/10.1186/s12859-022-04986-3"</a>
+                        https://doi.org/10.1186/s12859-022-04986-3</li>
+                <li><a><span>Zhu Lin</span>, Li W. Roles of Physicochemical and Structural Properties of RNA-Binding Proteins in Predicting the Activities
+                    of Trans-Acting Splicing Factors with Machine Learning[J]. International journal of molecular sciences. (2022) 
+                    <a href="https://www.mdpi.com/1422-0067/23/8/4426"</a>
+                    https://www.mdpi.com/1422-0067/23/8/4426</li>
+                <li><a><span>Zhu Lin</span>, Davari M D, Li W. Recent advances in the prediction of protein structural classes: Feature descriptors and
+                    machine learning algorithms[J]. Crystals. (2021) <a href="https://doi.org/10.3390/cryst11040324"</a>
+                     https://doi.org/10.3390/cryst11040324</li>
+                <li><a>Li-Min Wang, Run-Ze Wang, Yu-Ting Xiong, Hao-Sen Wang; <span>Zhu Lin</span>, Ke Zhang, Fu-Rong Gao. Guaranteed Cost
+                    Iterative Learning Control for Multi-Phase Batch Processes[J]; Journal of Shanghai Jiaotong University(Science); (2018)
+                    <a href="https://hdl.handle.net/1783.1/95040"</a>https://hdl.handle.net/1783.1/95040</li>
+                <li><a><span>Zhu Lin</span>, Hao-Sen Wang, Run-Ze Wang, Ke-Da Wang, Li-Min Wang, Peng Wang; Batch process 2D input and output
+                    Constraint Control Method with Time Delay; (Patent)</a></li>
+                <li><a>Yi-Xin Wang, <span>Zhu Lin</span>, Ke-Da Cao, Shuang Wu, Run-Ze Wang, Li-Min Wang, Peng Wang; Design Method of
+                    Two-dimensional Anti-interference Predictive Controller for Multi-stage Intermittent Process; (Patent)</a></li>
+                <li><a>Wei-Ping Luo, Yi-Xin Wang, <span>Zhu Lin</span>, Ke-Da Cao, Shuang Wu, Run-Ze Wang, Li-Min Wang, Peng Wang; Multi-stage
+                    Intermittent Process 2D Linear Tracking Fault-tolerant Control Method. (Patent)</a></li>        
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+
+    <!------JavaScript-->
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.left = "0";
+        }
+        function hideMenu(){
+            navLinks.style.left="-200px";
+        }        
+
+    </script>
+    <script>
+        const navlink=document.querySelectorAll('.nav_link')
+        const sections=document.querySelectorAll('section[id]')
+        window.addEventListener('scroll',scrollActive)
+        function scrollActive(){
+            const scrollY=window.pageYOffset
+            sections.forEach(current =>{
+                const sectionHeight=current.offsetHeight
+                const sectionTop=current.offsetTop-50
+                sectioonId=current.getAttribute('id')
+                if (scorllY>sectionTop && scrollY <=sectionTop+sectionHeight){
+                    document.querySelector('.nav-links a[href*='+sectionId+']').classList.add('active')
+                }else{
+                    document.querySelector('.nav-links a[href*='+sectionId+']').classList.remove('active')
+                }
+
+            })
+        }
+    </script>
+
+    <!------------call to action ------>
+
+    <section class="cta" id="contact">
+        <h1> Contact Me </h1>
+        <a href="mailto:lynn.lynzhu@gmail.com?Subject=Hello%20again" target="_top">
+            <i class="fa fa-envelope" aria-hidden="true"></i></a>
+    </section>
+
+   <!------------Footer ------>
+   <section class="footer">
+    <h4> About me </h4>
+    <p> helpful, smart and professional </p>
+    <div class="icons">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+    </div>
+    <p> made with <i class="fa fa-heart-o"></i> by Lynn</p>
+
+</section>
+</body>
+
+</html>
