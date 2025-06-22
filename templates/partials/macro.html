@@ -1,0 +1,39 @@
+{# templates/partials/macros.html #}
+
+{# 导航链接宏 #}
+{% macro nav_link(endpoint, label, is_active=False) -%}
+<li>
+  <a href="{{ url_for(endpoint) }}"
+     class="nav_link{% if is_active %} active{% endif %}">
+    {{ label }}
+  </a>
+</li>
+{%- endmacro %}
+
+
+{# 项目卡片宏 #}
+{% macro project_card(image_path, title, url, desc) -%}
+<div class="campus-col">
+  <div class="image-box">
+    <img src="{{ url_for('static', filename=image_path) }}" alt="{{ title }}">
+    <div class="layer"><p>{{ desc }}</p></div>
+  </div>
+  <h3>
+    <b><a href="{{ url }}" target="_blank">{{ title }}</a></b>
+  </h3>
+</div>
+{%- endmacro %}
+
+
+{# 星级评分宏 #}
+{% macro star_rating(score, max_stars=5) -%}
+<div class="stars">
+  {%- for i in range(max_stars) %}
+    {% if i < score %}
+      <i class="fa fa-star"></i>
+    {% else %}
+      <i class="fa fa-star-o"></i>
+    {% endif %}
+  {%- endfor %}
+</div>
+{%- endmacro %}
